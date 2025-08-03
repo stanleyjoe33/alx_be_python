@@ -9,9 +9,9 @@ def main():
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    command_parts = sys.argv[1].split(':')
-    command = command_parts[0]
-    amount = float(command_parts[1]) if len(command_parts) > 1 else None
+    parts = sys.argv[1].split(':')
+    command = parts[0]
+    amount = float(parts[1]) if len(parts) > 1 else None
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
@@ -28,4 +28,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
